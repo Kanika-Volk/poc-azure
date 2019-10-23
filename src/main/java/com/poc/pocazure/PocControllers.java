@@ -14,11 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class PocControllers {
 
     @GetMapping("get")
-    ResponseEntity<JSONObject> get(){
+    ResponseEntity<Employee> get(){
         JSONObject json = new JSONObject();
         json.put("name","ram");
         json.put("rollno","1");
-        return new ResponseEntity<JSONObject>(json, HttpStatus.OK);
+
+        Employee emp =new Employee();
+        emp.setId(12);
+        return new ResponseEntity<Employee>(emp, HttpStatus.OK);
     }
 
     @PostMapping("/post")
